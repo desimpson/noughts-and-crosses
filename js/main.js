@@ -23,7 +23,7 @@ let win;        // 'X', 'O', null or 'T'
 // Array of div elements representing the game's nine grid squares
 const squares = Array.from(document.querySelectorAll('#board div'));
 
-// Message to user displayed as h2 heading, e.g. "It's X's turn."
+// Message to user displayed as h2 heading, e.g. "It's X's turn"
 const messages = document.querySelector('h2');
 
 
@@ -83,7 +83,7 @@ function handleTurn(event) {
         return square === event.target;
     });
     // Square must be empty and game must not be already won
-    if (board[idx] == '' && getWinner() == null) {
+    if (board[idx] === '' && getWinner() === null) {
         board[idx] = turn;
         turn = nextTurn();
         win = getWinner();
@@ -103,7 +103,7 @@ function init() {
         '', '', ''
     ];
     render();
-    messages.textContent = `It's X's turn.`;
+    messages.textContent = `It's X's turn`;
 }
 
 /**
@@ -116,11 +116,11 @@ function render() {
     });
     var msg;
     if (win === 'T')
-        msg = 'Tie.';
+        msg = 'Tie';
     else if (win)
-        msg = `${win} wins the game.`;
+        msg = `${win} wins the game`;
     else
-        msg = `It's ${turn}'s turn.`;
+        msg = `It's ${turn}'s turn`;
     messages.textContent = msg;
 }
 
